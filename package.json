@@ -1,0 +1,30 @@
+{
+  "name": "mongodb",
+  "version": "1.0.0",
+  "description": "This is a playground project to learn more about mongoDB",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "test "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RandSohail/mongodb.git"
+  },
+  "author": "Rand Sohail",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RandSohail/mongodb/issues"
+  },
+  "homepage": "https://github.com/RandSohail/mongodb#readme",
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "mongodb": "^6.9.0",
+    "mongoose": "^8.6.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.6"
+  }
+}
