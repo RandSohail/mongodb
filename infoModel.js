@@ -2,17 +2,17 @@ import mongoose from 'mongoose';
 
 const infoSchema = new mongoose.Schema({
   name: { type: String, required: true },
-  age: { type: Number, required: true },
+  age: { type: Number, required: true, index: true },
   email: { type: String, required: true }
 });
 
 export const Info = mongoose.model('information', infoSchema);
-
+// Add one document to the database collection
 export default async () => {
   const newItem = new Info({
-    name: 'Memories',
-    age: 30,
-    email: 'john.doe@example.com'
+    name: 'Rand Sohail',
+    age: 26,
+    email: 'randsohail98@gmail.com'
   });
 
   try {
@@ -60,5 +60,4 @@ export const insertMillionRecords = async () => {
   }
 
   console.log('Finished inserting all records.');
-  // mongoose.connection.close();  // Close the connection after insertion
 };

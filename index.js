@@ -1,9 +1,12 @@
 import express from 'express';
 import 'dotenv/config';
 import mongoose from 'mongoose';
-import AddDocument, { insertMillionRecords } from './infoModel.js';
-import FindUsersByEmail from './findUsersByEmail.js';
+import AddDocument, { Info, insertMillionRecords } from './infoModel.js';
+import AgeQuery from './ageQuery.js';
+import AgeIndexes from './ageIndex.js';
 
+// start the mongodb
+// sudo systemctl start mongod
 
 const app = express();
 const PORT = 3000;
@@ -13,9 +16,7 @@ app.get('/', (req, res) => {
 })
 
 
-// mongodb+srv://rand_sohail:12345678900@cluster0.srtji.mongodb.net/
 const connectToDataBase = () => {
-
   mongoose.connect("mongodb://localhost:27017/user")
     .then(() => {
       console.log("Connected To DB Successfully....")
@@ -26,9 +27,14 @@ const connectToDataBase = () => {
 }
 connectToDataBase();
 
+// Manual Indexes 
+// AgeIndexes();
 
-// findUsersByEmail
-// FindUsersByEmail();
+console.log('List for the indexes', await Info.listIndexes());
+
+// Age Query for the users who is age equal 26
+// AgeQuery();
+
 
 // Check the database name is connected to
 // mongoose.connection.on('connected', () => {
@@ -37,11 +43,6 @@ connectToDataBase();
 
 
 
-// add one record to the database
-// AddDocument();
-
-// mongoose.
-// sudo systemctl start mongod
 
 // insertMillionRecords();
 
