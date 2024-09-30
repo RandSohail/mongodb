@@ -5,14 +5,14 @@ import AddDocument, { Info, insertMillionRecords } from './infoModel.js';
 import AgeQuery from './ageQuery.js';
 import AgeIndexes from './ageIndex.js';
 
-// start the mongodb
+// start the mongod to connect mongodb compass server 
 // sudo systemctl start mongod
 
 const app = express();
 const PORT = 3000;
 
 app.get('/', (req, res) => {
-  res.send('Test And the server is working hehhehe')
+  res.send('Server is working successfully')
 })
 
 
